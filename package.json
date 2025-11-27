@@ -1,0 +1,28 @@
+{
+  "name": "code_gen_ver4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gen:api": "hygen api new",
+    "postgen:api": "node scripts/auto-logger.js",
+    "// EXPLANATION": "Lệnh dưới đây chạy cả 2: Sinh code -> Rồi tự sửa code",
+    "create-customer": "npm run gen:api -- --name Customer && npm run postgen:api",
+    "ast:refactor": "node scripts/apply_ast.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "knex": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/generator": "^7.28.5",
+    "@babel/parser": "^7.28.5",
+    "@babel/traverse": "^7.28.5",
+    "@babel/types": "^7.28.5"
+  }
+}
